@@ -1,1 +1,1 @@
-# Scraper.Games-With-Gold
+# Scraper-Games-With-Gold
