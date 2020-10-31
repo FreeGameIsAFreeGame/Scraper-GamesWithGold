@@ -2,8 +2,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeGameIsAFreeGame.Scraper.GamesWithGold", "FreeGameIsAFreeGame.Scraper.GamesWithGold\FreeGameIsAFreeGame.Scraper.GamesWithGold.csproj", "{4BB249E7-AD59-44B4-A6C9-03434E9E5E36}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeGameIsAFreeGame.Core", "..\FreeGameIsAFreeGame.Core\FreeGameIsAFreeGame.Core\FreeGameIsAFreeGame.Core\FreeGameIsAFreeGame.Core.csproj", "{9F1E0C34-15E2-4BA3-95C1-129B098280B3}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -14,9 +12,5 @@ Global
 		{4BB249E7-AD59-44B4-A6C9-03434E9E5E36}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4BB249E7-AD59-44B4-A6C9-03434E9E5E36}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4BB249E7-AD59-44B4-A6C9-03434E9E5E36}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9F1E0C34-15E2-4BA3-95C1-129B098280B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9F1E0C34-15E2-4BA3-95C1-129B098280B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9F1E0C34-15E2-4BA3-95C1-129B098280B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9F1E0C34-15E2-4BA3-95C1-129B098280B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
