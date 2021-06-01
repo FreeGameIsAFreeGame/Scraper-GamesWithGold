@@ -103,5 +103,13 @@ namespace FreeGameIsAFreeGame.Scraper.GamesWithGold
                 startDate = startDate.AddYears(-1);
             }
         }
+
+#region IDisposable
+        /// <inheritdoc />
+        public void Dispose()
+        {
+            context?.Dispose();
+        }
+#endregion
     }
 }
