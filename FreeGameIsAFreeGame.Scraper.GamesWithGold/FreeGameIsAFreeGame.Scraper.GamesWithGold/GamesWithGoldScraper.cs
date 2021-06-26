@@ -20,7 +20,7 @@ namespace FreeGameIsAFreeGame.Scraper.GamesWithGold
         string IScraper.Identifier => "GamesWithGold";
 
         /// <inheritdoc />
-        public Task Initialize()
+        public Task Initialize(CancellationToken token)
         {
             context = BrowsingContext.New(Configuration.Default
                 .WithDefaultLoader()
