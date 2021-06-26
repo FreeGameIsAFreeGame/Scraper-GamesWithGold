@@ -18,15 +18,17 @@ namespace FreeGameIsAFreeGame.Scraper.GamesWithGold
         private ILogger logger;
 
         string IScraper.Identifier => "GamesWithGold";
-        string IScraper.DisplayName => "Xbox Games With Gold";
 
-        public GamesWithGoldScraper()
+        /// <inheritdoc />
+        public Task Initialize()
         {
             context = BrowsingContext.New(Configuration.Default
                 .WithDefaultLoader()
                 .WithDefaultCookies());
 
             logger = LogManager.GetLogger(GetType().FullName);
+            
+            return Task.CompletedTask;
         }
 
         async Task<IEnumerable<IDeal>> IScraper.Scrape(CancellationToken token)
@@ -34,16 +36,12 @@ namespace FreeGameIsAFreeGame.Scraper.GamesWithGold
             List<IDeal> deals = new List<IDeal>();
 
             string content = await GetContent(token);
-            if (token.IsCancellationRequested)
-                return null;
+            token.ThrowIfCancellationRequested();
 
             GamesWithGoldGlobalContent globalContent = GamesWithGoldGlobalContent.FromJson(content);
             GamesLocale locale = globalContent.Locales["en-us"];
             for (int i = 0; i < 8; i++)
             {
-                if (token.IsCancellationRequested)
-                    return null;
-
                 GamesWithGoldContent gameContent = locale.ToGamesWithGoldContent(i + 1);
                 if (string.IsNullOrEmpty(gameContent.Dates))
                     continue;
@@ -104,12 +102,11 @@ namespace FreeGameIsAFreeGame.Scraper.GamesWithGold
             }
         }
 
-#region IDisposable
         /// <inheritdoc />
-        public void Dispose()
+        public Task Dispose()
         {
             context?.Dispose();
+            return Task.CompletedTask;
         }
-#endregion
     }
 }
